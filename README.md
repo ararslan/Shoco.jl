@@ -6,7 +6,7 @@ Compression is performed using [entropy encoding](https://en.wikipedia.org/wiki/
 
 Two functions are provided by the module: `compress` and `decompress`.
 Both accept a single `AbstractString` argument and return a string.
-Note that even though Julia likes to assume the output from `compress` is a `UTF8String`, depending on the input it the output may not actually be valid UTF-8.
+Note that even though Julia likes to assume the output from `compress` is a `UTF8String`, depending on the input the output may not actually be valid UTF-8.
 
 Here's an example using the functions at the REPL.
 

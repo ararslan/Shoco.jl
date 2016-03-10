@@ -1,5 +1,7 @@
 # Shoco.jl
 
+[![Coverage Status](https://coveralls.io/repos/github/ararslan/Shoco.jl/badge.svg?branch=master)](https://coveralls.io/github/ararslan/Shoco.jl?branch=master)
+
 **Shoco.jl** is a Julia module that provides access to the compression and decompression functions in the [**shoco**](https://github.com/Ed-von-Schleck/shoco) C library.
 The algorithms are optimized for short strings and perform well in comparison to [smaz](https://github.com/antirez/smaz), [gzip](https://en.wikipedia.org/wiki/Gzip), and [xz](https://en.wikipedia.org/wiki/Xz).
 Compression is performed using [entropy encoding](https://en.wikipedia.org/wiki/Entropy_encoding).

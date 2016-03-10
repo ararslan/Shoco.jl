@@ -10,11 +10,12 @@ module Shoco
     const LIB = shoco[1][2]
 
     function compress(s::AbstractString)
+        isempty(s) && return ""
         compressed = Array(Cchar, sizeof(s))
         nbytes = ccall((:shoco_compress, LIB), Int,
                        (Ptr{Cchar}, Csize_t, Ptr{Cchar}, Csize_t),
                        s, 0, compressed, sizeof(s))
-        nbytes == 0 && return ""
+        nbytes > 0 || throw(ErrorException("Compression failed for input $s"))
         compressed = compressed[1:nbytes]
         # Ensure null termination
         compressed[end] == Cchar(0) || push!(compressed, Cchar(0))
@@ -22,11 +23,13 @@ module Shoco
     end
 
     function decompress(s::AbstractString)
+        isempty(s) && return ""
         # The decompressed string will be at most twice as long as the input
         decompressed = Array(Cchar, 2 * sizeof(s))
         nbytes = ccall((:shoco_decompress, LIB), Int,
                        (Ptr{Cchar}, Csize_t, Ptr{Cchar}, Csize_t),
                        s, sizeof(s), decompressed, 2 * sizeof(s))
+        nbytes > 0 || throw(ErrorException("Decompression failed for input $s"))
         decompressed = decompressed[1:nbytes]
         decompressed[end] == Cchar(0) || push!(decompressed, Cchar(0))
         return bytestring(pointer(decompressed))

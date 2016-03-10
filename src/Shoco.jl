@@ -31,5 +31,4 @@ module Shoco
         decompressed[end] == Cchar(0) || push!(decompressed, Cchar(0))
         return bytestring(pointer(decompressed))
     end
-
 end

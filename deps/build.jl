@@ -1,3 +1,7 @@
+@windows_only begin
+    error("The shoco C library doesn't support Windows")
+end
+
 using BinDeps
 
 @BinDeps.setup

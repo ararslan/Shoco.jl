@@ -1,5 +1,6 @@
 # Shoco.jl
 
+[![Build Status](https://travis-ci.org/ararslan/Shoco.jl.svg?branch=master)](https://travis-ci.org/ararslan/Shoco.jl)
 [![Coverage Status](https://coveralls.io/repos/github/ararslan/Shoco.jl/badge.svg?branch=master)](https://coveralls.io/github/ararslan/Shoco.jl?branch=master)
 
 **Shoco.jl** is a Julia module that provides access to the compression and decompression functions in the [**shoco**](https://github.com/Ed-von-Schleck/shoco) C library.

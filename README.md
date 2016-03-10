@@ -22,3 +22,5 @@ julia> compress("what's happening")
 julia> decompress("؉'s ⎨<g")
 "what's happening"
 ```
+
+The shoco C library does not work on Windows, which means that this package has the same restriction.

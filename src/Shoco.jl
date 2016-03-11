@@ -1,13 +1,14 @@
 __precompile__()
 
 module Shoco
-    using BinDeps
-    @BinDeps.load_dependencies
+    if isfile(joinpath(dirname(@__FILE__), "..", "deps", "deps.jl"))
+        include("../deps/deps.jl")
+    else
+        error("Shoco not properly installed. Please run Pkg.build(\"Shoco\")",
+              " and restart Julia.")
+    end
 
     export compress, decompress
-
-    # Gets the fully qualified path to the library for use in ccall
-    const LIB = shoco[1][2]
 
 
     function compress(s::AbstractString)
@@ -17,7 +18,7 @@ module Shoco
         compressed = Array(Cchar, sizeof(s))
 
         # The function modifies `compressed` and returns the number of bytes written
-        nbytes = ccall((:shoco_compress, LIB), Int,
+        nbytes = ccall((:shoco_compress, shoco), Int,
                        (Ptr{Cchar}, Csize_t, Ptr{Cchar}, Csize_t),
                        s, 0, compressed, sizeof(s))
 
@@ -37,7 +38,7 @@ module Shoco
         # The decompressed string will be at most twice as long as the input
         decompressed = Array(Cchar, 2 * sizeof(s))
 
-        nbytes = ccall((:shoco_decompress, LIB), Int,
+        nbytes = ccall((:shoco_decompress, shoco), Int,
                        (Ptr{Cchar}, Csize_t, Ptr{Cchar}, Csize_t),
                        s, sizeof(s), decompressed, 2 * sizeof(s))
 

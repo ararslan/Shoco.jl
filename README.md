@@ -1,5 +1,7 @@
 # Shoco.jl
 
+[![Shoco](http://pkg.julialang.org/badges/Shoco_0.4.svg)](http://pkg.julialang.org/?pkg=Shoco)
+[![Shoco](http://pkg.julialang.org/badges/Shoco_0.5.svg)](http://pkg.julialang.org/?pkg=Shoco)
 [![Build Status](https://travis-ci.org/ararslan/Shoco.jl.svg?branch=master)](https://travis-ci.org/ararslan/Shoco.jl)
 [![Coverage Status](https://coveralls.io/repos/github/ararslan/Shoco.jl/badge.svg?branch=master)](https://coveralls.io/github/ararslan/Shoco.jl?branch=master)
 

@@ -1,3 +1,5 @@
+import Compat: @static, is_windows, is_apple
+
 @static if is_windows()
     error("The shoco C library doesn't support Windows")
 end

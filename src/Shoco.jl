@@ -1,8 +1,6 @@
 __precompile__()
 
 module Shoco
-    using Compat
-
     if isfile(joinpath(dirname(@__FILE__), "..", "deps", "deps.jl"))
         include("../deps/deps.jl")
     else
@@ -12,6 +10,9 @@ module Shoco
 
     export compress, decompress
 
+    if !isdefined(Base, :unsafe_string)
+        const unsafe_string = bytestring
+    end
 
     function compress(s::AbstractString)
         isempty(s) && return ""

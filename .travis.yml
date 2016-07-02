@@ -1,14 +1,14 @@
 language: julia
 os:
-  - osx
   - linux
+  - osx
 julia:
+  - release
   - nightly
-  - 0.4
 notifications:
   email: false
-script:
-  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - julia -e 'Pkg.clone(pwd()); Pkg.build("Shoco"); Pkg.test("Shoco"; coverage=true)';
+# script:
+#   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+#   - julia -e 'Pkg.clone(pwd()); Pkg.build("Shoco"); Pkg.test("Shoco"; coverage=true)';
 after_success:
   - julia -e 'cd(Pkg.dir("Shoco")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())';

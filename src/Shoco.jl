@@ -1,6 +1,8 @@
 __precompile__()
 
 module Shoco
+    using Compat
+
     if isfile(joinpath(dirname(@__FILE__), "..", "deps", "deps.jl"))
         include("../deps/deps.jl")
     else
@@ -28,7 +30,7 @@ module Shoco
         compressed = compressed[1:nbytes]
         compressed[end] == Cchar(0) || push!(compressed, Cchar(0))
 
-        return bytestring(pointer(compressed))
+        return unsafe_string(pointer(compressed))
     end
 
 
@@ -47,6 +49,6 @@ module Shoco
         decompressed = decompressed[1:nbytes]
         decompressed[end] == Cchar(0) || push!(decompressed, Cchar(0))
 
-        return bytestring(pointer(decompressed))
+        return unsafe_string(pointer(decompressed))
     end
 end

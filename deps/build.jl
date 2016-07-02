@@ -1,4 +1,4 @@
-@windows_only begin
+@static if is_windows()
     error("The shoco C library doesn't support Windows")
 end
 
@@ -32,7 +32,7 @@ provides(BuildProcess, (@build_steps begin
             CreateDirectory(libdir(shoco))
             CCompile(joinpath(srcdir(shoco), "shoco-$sha", "shoco.c"),
                      joinpath(libdir(shoco), "shoco." * BinDeps.shlib_ext),
-                     ["-fPIC", "-std=c99", @osx ? "-dynamiclib" : "-shared"], [])
+                     ["-fPIC", "-std=c99", is_apple() ? "-dynamiclib" : "-shared"], [])
         end)
     end
 end), shoco)

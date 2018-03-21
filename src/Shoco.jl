@@ -18,7 +18,7 @@ export compress, decompress
 function compress(s::AbstractString)
     isempty(s) && return ""
     # The output should be no longer than the input
-    compressed = Vector{UInt8}(uninitialized, sizeof(s))
+    compressed = Vector{UInt8}(undef, sizeof(s))
     # The function modifies `compressed` and returns the number of bytes written
     nbytes = ccall((:shoco_compress, shoco), Int,
                    (Ptr{Cchar}, Csize_t, Ptr{UInt8}, Csize_t),
@@ -31,7 +31,7 @@ end
 function decompress(s::AbstractString)
     isempty(s) && return ""
     # The decompressed string will be at most twice as long as the input
-    decompressed = Vector{UInt8}(uninitialized, 2 * sizeof(s))
+    decompressed = Vector{UInt8}(undef, 2 * sizeof(s))
     nbytes = ccall((:shoco_decompress, shoco), Int,
                    (Ptr{Cchar}, Csize_t, Ptr{UInt8}, Csize_t),
                    s, sizeof(s), decompressed, 2 * sizeof(s))

@@ -1,6 +1,5 @@
 using Shoco
-using Compat
-using Compat.Test
+using Test
 
 s = "What's up, doc?"
 c = compress(s)

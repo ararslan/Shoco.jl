@@ -6,8 +6,9 @@ let depsfile = joinpath(@__DIR__, "..", "deps", "deps.jl")
               " and restart Julia.")
     end
     include(depsfile)
-    check_deps()
 end
+
+__init__() = check_deps()
 
 export compress, decompress
 

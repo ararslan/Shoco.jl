@@ -11,37 +11,37 @@ bin_prefix = "https://github.com/ararslan/ShocoBuilder/releases/download/v0.1.0"
 downloads = Dict(
     FreeBSD(:x86_64) =>
         ("$bin_prefix/Shoco.v0.1.0.x86_64-unknown-freebsd11.1.tar.gz",
-         "d96d79c5302ff90b5ff3f5051893988c4029e3bc351a8b2b8c3ba1deb4f81cce"),
+         "d6b192c4e965659cac273e499a586fa4f2094de141dac3dfd192e636f7a3c2ee"),
     Linux(:aarch64, :glibc) =>
         ("$bin_prefix/Shoco.v0.1.0.aarch64-linux-gnu.tar.gz",
-         "053c6375973758bbe477b2f2d36d7aa8c1e15d39476eb293f5e2704556a2b289"),
+         "d44588e4268f36aafa05ae9a1e2c40386d0289955c4fc192663c2d857ca2663c"),
     Linux(:aarch64, :musl) =>
         ("$bin_prefix/Shoco.v0.1.0.aarch64-linux-musl.tar.gz",
-         "7ce8c33e688ce177f5e4f8dc38a8861c3a20dab0555ec165d51ad0086fc14e78"),
+         "c21ca1c265e28adec6f5e4fd630892b1f64283987bbf3170ddddece3fbe2abf8"),
     Linux(:armv7l, :glibc, :eabihf) =>
         ("$bin_prefix/Shoco.v0.1.0.arm-linux-gnueabihf.tar.gz",
-         "0133cc0dbcd619902cbd340ea3277d5b9aea2f338ef89176f61f8c0faf64d2bb"),
+         "96a21441085150c4cfcb31e4a943e5fcf8055ddcca005c364a44efaa734d7937"),
     Linux(:armv7l, :musl, :eabihf) =>
         ("$bin_prefix/Shoco.v0.1.0.arm-linux-musleabihf.tar.gz",
-         "1df02541a066099c818b9d260589cf479167568faf2b720183b748e6eed1f2f7"),
+         "7d55f6370dad1c7e38aff06675690913156daebe45c9eb53b913f6123ab70ad6"),
     Linux(:i686, :glibc) =>
         ("$bin_prefix/Shoco.v0.1.0.i686-linux-gnu.tar.gz",
-         "5066fa8421f8d3b37c0dcfe12486ff87a8bbfb407429cad7f751c40ccd4d395d"),
+         "0d8a07d3ae4070765284ef0b2c8d3a830c17875db3b6833550163e2f64c3cf6a"),
     Linux(:i686, :musl) =>
         ("$bin_prefix/Shoco.v0.1.0.i686-linux-musl.tar.gz",
-         "89669f0c72afaf974b3aae11445dee1ed6a96dd94cf016acf45041c54d463ecc"),
+         "b0b2af8b972a1a5d6afa50acc67c7a08d6b83c5ca745cc6408c10aab293ca878"),
     Linux(:powerpc64le, :glibc) =>
         ("$bin_prefix/Shoco.v0.1.0.powerpc64le-linux-gnu.tar.gz",
-         "7befe4ba16b6b6c99fe626a1949252782bedf04f82aae43333db9db6285f95bc"),
+         "f55a47099cd38b0ad613f71990c94fd9beeb1e45704844b1615df4b910f7cfdc"),
     Linux(:x86_64, :glibc) =>
         ("$bin_prefix/Shoco.v0.1.0.x86_64-linux-gnu.tar.gz",
-         "72feff5505b72dd712c6673cef6e30cc23b6e42f750fd434f9ad51262cc6ba5d"),
+         "17de1ab56a576e458632c19aec5e0e3031f988730f7208944a9b13620f38902a"),
     Linux(:x86_64, :musl) =>
         ("$bin_prefix/Shoco.v0.1.0.x86_64-linux-musl.tar.gz",
-         "d32b95617506858168bfdc5c3a6c1754590eb495152f9eeb5608dff5450cf1e5"),
+         "e8207c469fa6e0ddcc80d9123bc642f5719e804c5ae1683264af9e184a4c0c23"),
     MacOS(:x86_64) =>
         ("$bin_prefix/Shoco.v0.1.0.x86_64-apple-darwin14.tar.gz",
-         "1dfcb16c8c3becad52225015001910fb8e322e685c7f577478661024f14f2a7f"),
+         "0d6f1985638accdc55c95906e2f7c646f283dd7bb996448f5a90433b74f9f75f"),
 )
 
 unsatisfied = any(p->!satisfied(p, verbose=verbose), products)

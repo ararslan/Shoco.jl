@@ -1,6 +1,6 @@
 name = "Shoco"
 uuid = "f786175c-7be2-5c6f-a66a-14694b1fea27"
-version = "1.0.0"
+version = "0.3.1"
 
 [deps]
 Shoco_jll = "70823c38-4688-527f-81c8-b284cebe458d"

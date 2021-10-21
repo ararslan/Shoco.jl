@@ -1,6 +1,6 @@
-deps/builds
-deps/downloads
-deps/src
-deps/usr
-deps/deps.jl
 *.jl.cov
+*.jl.*.cov
+*.jl.mem
+*.DS_Store
+Manifest.toml
+docs/build/

@@ -1,5 +1,13 @@
 name = "Shoco"
 uuid = "f786175c-7be2-5c6f-a66a-14694b1fea27"
+version = "1.0.0"
+
+[deps]
+Shoco_jll = "70823c38-4688-527f-81c8-b284cebe458d"
+
+[compat]
+Shoco_jll = "2015.10.8"
+julia = "1.6"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

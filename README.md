@@ -1,8 +1,7 @@
 # Shoco.jl
 
-[![Shoco](http://pkg.julialang.org/badges/Shoco_0.7.svg)](http://pkg.julialang.org/?pkg=Shoco)
-[![Build Status](https://travis-ci.org/ararslan/Shoco.jl.svg?branch=master)](https://travis-ci.org/ararslan/Shoco.jl)
-[![Coverage Status](https://coveralls.io/repos/github/ararslan/Shoco.jl/badge.svg?branch=master)](https://coveralls.io/github/ararslan/Shoco.jl?branch=master)
+[![Build Status](https://github.com/ararslan/Shoco.jl/workflows/CI/badge.svg)](https://github.com/ararslan/Shoco.jl/actions?query=workflow%3ACI+branch%3Amaster)
+[![codecov.io](http://codecov.io/github/ararslan/Shoco.jl/coverage.svg?branch=master)](http://codecov.io/github/ararslan/Shoco.jl?branch=master)
 
 **Shoco.jl** is a Julia package that provides access to the compression and decompression functions in the [**Shoco**](https://github.com/Ed-von-Schleck/shoco) C library.
 The algorithms are optimized for short strings and perform well in comparison to [smaz](https://github.com/antirez/smaz), [gzip](https://en.wikipedia.org/wiki/Gzip), and [xz](https://en.wikipedia.org/wiki/Xz).
@@ -23,5 +22,3 @@ julia> compress("what's happening")
 julia> decompress("؉'s ⎨<g")
 "what's happening"
 ```
-
-The Shoco C library does not work on Windows due to lack of C99 support, which means that this package has the same restriction.
